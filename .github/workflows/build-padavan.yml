@@ -46,7 +46,7 @@ jobs:
         exit 1
         fi
         
-        #cp -f configs/templates/$TNAME.config .config   ###修改集成插件配置需进入到这个机型配置文件内###
+        cp -f configs/templates/$TNAME.config .config   ###修改集成插件配置需进入到这个机型配置文件内###
         
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照下面的格式添加即可
