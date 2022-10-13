@@ -45,13 +45,17 @@ jobs:
         echo "configs/templates/$TNAME.config not found "
         exit 1
         fi
-        cp -f configs/templates/$TNAME.config .config
-        ################################################################################################
-        #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
-        #格式如下：
-        #sed -i '/自定义项/d' .config
-        #echo "自定义项=y" >> .config
+        
+        #cp -f configs/templates/$TNAME.config .config   ###修改集成插件配置需进入到这个机型配置文件内###
+        
         #########################################################################################
+        #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照下面的格式添加即可
+        #格式如下：
+       
+        #sed -i 's/内容/新内容/g' .config            ##########比如xxxx=y替换xxxx=n################
+       
+        #########################################################################################
+        
         sudo ./clear_tree
         sudo ./build_firmware_modify $TNAME 0
         sudo mv -f images/*.trx /opt/images/
